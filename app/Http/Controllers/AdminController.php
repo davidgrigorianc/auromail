@@ -6,10 +6,15 @@ use Newsletter;
 use Illuminate\Pagination\LengthAwarePaginator;
 class AdminController extends Controller
 {
+
+
+
+
     public function __construct()
     {
         $this->middleware('auth');
     }
+
     public function dashboard(Request $request)
     {
     	$page = $request->page ?? 1;
@@ -27,5 +32,9 @@ class AdminController extends Controller
  
         return view('admin.index', ['subscribers' => $paginatedItems]);
 
+    }
+
+    public function testMail(){
+    	
     }
 }

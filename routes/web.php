@@ -24,3 +24,4 @@ Route::get('/admin', 'AdminController@dashboard')
     ->name('admin');
 Route::post('/subcribe', 'SubscribeController@subscribe')    
 ->name('subscribe');
+Route::get('/testmail', 'AdminController@testMail');
