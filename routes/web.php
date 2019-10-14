@@ -13,9 +13,13 @@
 
 
 Auth::routes();
-Route::get('/', 'HomeController@index')    
+Route::get('/', 'HomeController@index') 
     ->name('home');
-Route::get('/admin', 'AdminController@admin')    
+Route::get('/home', 'HomeController@index') 
+    ->name('home');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');  
+
+Route::get('/admin', 'AdminController@dashboard')    
     ->middleware('is_admin')    
     ->name('admin');
 Route::post('/subcribe', 'SubscribeController@subscribe')    
